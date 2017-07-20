@@ -24,5 +24,5 @@ call neobundle#end()
 
 NeoBundleCheck
 
-runtime! ~/.vim/basic.vim
-runtime! ~/.vim/gtags.vim
+runtime! ~/.vim/autoload/basic.vim
+runtime! ~/.vim/autoload/gtags.vim
