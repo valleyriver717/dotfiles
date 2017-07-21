@@ -26,6 +26,7 @@ NeoBundleCheck
 
 syntax on
 colorscheme solarized
+set background=dark
 
 runtime! ~/.vim/autoload/basic.vim
 runtime! ~/.vim/autoload/gtags.vim
