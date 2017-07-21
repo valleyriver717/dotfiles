@@ -24,5 +24,8 @@ call neobundle#end()
 
 NeoBundleCheck
 
+syntax on
+colorscheme solarized
+
 runtime! ~/.vim/autoload/basic.vim
 runtime! ~/.vim/autoload/gtags.vim
