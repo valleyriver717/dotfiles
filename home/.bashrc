@@ -6,7 +6,7 @@
 export LANG=UTF8
 #Prompt color
 source ~/.bash/.git-prompt.sh
-export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\] $ '
+export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n$ '
 #Bash history controll
 export HISTCONTROL=ignoredups:erasedups
 
