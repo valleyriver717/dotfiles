@@ -32,13 +32,23 @@ if [ "$(uname)" == 'Darwin' ]; then
 
 #Linux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  #Dir color(tmp)
+  eval $(dircolors ~/.mintty/dircolors-solarized/dircolors.ansi-universal)
+  #Color of ls command
+  alias grep="grep --color"
+  alias ls="ls -F --color=auto"
+  alias la="ls -F --color=auto -a"
+  alias ll="ls -F --color=auto -l"
+  alias lal="ls -F --color=auto -la"
+  #Use vim's less.sh instead of less command
+  alias less="/usr/share/vim/vim74/macros/less.sh"
   :
 
 #Git for Windows
 elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then 
   #Dir color
   eval $(dircolors ~/.mintty/color/dircolor/dircolors-solarized/dircolors.ansi-universal)
-  #ls color
+  #Color of ls command
   alias grep="grep --color"
   alias ls="ls -F --color=auto"
   alias la="ls -F --color=auto -a"
