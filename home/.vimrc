@@ -2,6 +2,7 @@ if has('vim_starting')
   if &compatible
     set nocompatible
   endif
+  set runtimepath+=~/.vim/
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
@@ -24,9 +25,6 @@ call neobundle#end()
 
 NeoBundleCheck
 
-syntax on
-colorscheme solarized
-set background=dark
-
-runtime! ~/.vim/autoload/basic.vim
-runtime! ~/.vim/autoload/gtags.vim
+runtime! /autoload/basic.vim
+runtime! /autoload/gtags.vim
+runtime! /autoload/vimclang.vim

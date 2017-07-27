@@ -4,9 +4,6 @@
 
 #Encoding
 export LANG=UTF8
-#Prompt color
-source ~/.bash/.git-prompt.sh
-export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n$ '
 #Bash history controll
 export HISTCONTROL=ignoredups:erasedups
 
@@ -16,6 +13,9 @@ export HISTCONTROL=ignoredups:erasedups
 
 #Mac
 if [ "$(uname)" == 'Darwin' ]; then
+  #Prompt color
+  source ~/.bash/.git-prompt.sh
+  export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n$ '
   #Dir color
   eval $(gdircolors ~/.iterm2/color/dircolor/dircolors-solarized/dircolors.ansi-universal)
   #Arduino
@@ -32,6 +32,9 @@ if [ "$(uname)" == 'Darwin' ]; then
 
 #Linux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  #Prompt color
+  source ~/.bash/.git-prompt.sh
+  export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n$ '
   #Dir color(tmp)
   eval $(dircolors ~/.mintty/dircolors-solarized/dircolors.ansi-universal)
   #Color of ls command
@@ -45,7 +48,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   :
 
 #Git for Windows
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then 
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW64_NT' ]; then 
   #Dir color
   eval $(dircolors ~/.mintty/color/dircolor/dircolors-solarized/dircolors.ansi-universal)
   #Color of ls command
