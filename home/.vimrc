@@ -8,6 +8,7 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle'))
   NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'vim-scripts/gtags.vim'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'altercation/vim-colors-solarized'
@@ -29,3 +30,5 @@ NeoBundleCheck
 runtime! /autoload/basic.vim
 runtime! /autoload/gtags.vim
 runtime! /autoload/vimclang.vim
+runtime! /autoload/nerdtree.vim
+
