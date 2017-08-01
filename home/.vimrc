@@ -8,6 +8,7 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle'))
   NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'vim-scripts/gtags.vim'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'Shougo/neocomplete.vim'
