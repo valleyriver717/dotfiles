@@ -1,6 +1,8 @@
 filetype plugin indent on
 set background=dark
 set number
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme solarized
 syntax on
 
