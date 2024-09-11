@@ -67,21 +67,21 @@ lvim.plugins = {
 			end
 		end,
 	},
-	{
-		"linux-cultist/venv-selector.nvim",
-		dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-		opts = {
-			-- Your options go here
-			-- name = "venv",
-			-- auto_refresh = false
-		},
-		event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-		keys = { -- Keymap to open VenvSelector to pick a venv.
-			{ "<leader>vs", "<cmd>VenvSelect<cr>" },
-			-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-			{ "<leader>vc", "<cmd>VenvSelectCached<cr>" },
-		},
-	},
+	-- {
+	-- 	"linux-cultist/venv-selector.nvim",
+	-- 	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+	-- 	opts = {
+	-- 		-- Your options go here
+	-- 		-- name = "venv",
+	-- 		-- auto_refresh = false
+	-- 	},
+	-- 	event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+	-- 	keys = { -- Keymap to open VenvSelector to pick a venv.
+	-- 		{ "<leader>vs", "<cmd>VenvSelect<cr>" },
+	-- 		-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+	-- 		{ "<leader>vc", "<cmd>VenvSelectCached<cr>" },
+	-- 	},
+	-- },
 }
 -- Appearance
 lvim.colorscheme = "neon"
@@ -111,19 +111,11 @@ null_ls.setup({
 })
 
 -- Others
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = "*",
 	callback = function()
 		vim.lsp.buf.format({ async = false })
-		vim.cmd("silent! write")
-	end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function()
-		vim.lsp.buf.format({ async = false })
-		vim.cmd("silent! write")
+		-- vim.cmd("silent! write")
 	end,
 })
 
@@ -179,6 +171,9 @@ vim.keymap.set("n", "<Leader>ds", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
 end, opts)
+
+vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
+vim.opt.undofile = true
 
 -- Enable powershell as your default shell
 vim.opt.shell = "pwsh.exe"
