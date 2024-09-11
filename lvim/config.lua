@@ -135,6 +135,7 @@ local opts = {
 	noremap = true,
 	silent = true,
 }
+vim.keymap.set("n", "<C-s>", ":w<CR>", opts)
 vim.keymap.set("n", "<C-q>", "<C-v>", opts)
 vim.keymap.set("n", "<F5>", function()
 	require("dap").continue()
