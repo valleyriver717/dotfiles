@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 lvim.plugins = {
-	{ "rafamadriz/neon" },
+	{ "tomasr/molokai" },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -84,7 +84,7 @@ lvim.plugins = {
 	-- },
 }
 -- Appearance
-lvim.colorscheme = "neon"
+lvim.colorscheme = "molokai"
 lvim.transparent_window = true
 
 -- Config
